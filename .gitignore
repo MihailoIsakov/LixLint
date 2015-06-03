@@ -1,6 +1,7 @@
 # Mix artifacts
 /_build
 /deps
+erl_crash.dump
 /*.ez
 
 # Elixir compiled files
