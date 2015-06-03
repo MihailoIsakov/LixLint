@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-7">
+    Here we will put table;
+    <table class="table table-hover">
+      <tbody>
+      <tr ng-repeat="data in tableData" >
+        <td class="{{data.type}}"><span class="row_number">{{$index+1}}</span> <span class="text_colored">{{data.row}}</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-4">
+    This shit is here for graph;
+  </div>
+</div>
