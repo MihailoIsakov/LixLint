@@ -1,4 +1,4 @@
-# Statika
+# LixLint
 
 To start your new Phoenix application:
 
