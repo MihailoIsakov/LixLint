@@ -87,17 +87,22 @@ end
 defmodule Typer do
 
   def print(element) when is_tuple(element) do
-    IO.write "{ "
-    Enum.map(Tuple.to_list(element), fn x-> IO.write(get_type(x) <> ", ") end)
-    IO.puts " }"
-    Enum.map(Tuple.to_list(element), fn x-> print(x) end)
+    IO.inspect List.to_tuple Enum.map(Tuple.to_list(element), fn x-> print(x) end)
+    
+    #    IO.write "{ "
+    #    Enum.map(Tuple.to_list(element), fn x-> IO.write(get_type(x) <> ", ") end)
+    #    IO.puts " }"
+    #    Enum.map(Tuple.to_list(element), fn x-> print(x) end)
+    "tuple"
   end
 
   def print(element) when is_list(element) do
-    IO.write "[ "
-    Enum.map(element, fn x-> IO.write(get_type(x) <> ", ") end)
-    IO.puts " ]"
-    Enum.map(element, fn x-> print(x) end)
+    IO.inspect Enum.map(element, fn x-> print(x) end)
+  #    IO.write "[ "
+  #    Enum.map(element, fn x-> IO.write(get_type(x) <> ", ") end)
+  #    IO.puts " ]"
+  #    Enum.map(element, fn x-> print(x) end)
+    "list"
   end
 
   def print(element) do
@@ -108,5 +113,8 @@ defmodule Typer do
   def get_type(element) when is_atom(element), do: "atom"
   def get_type(element) when is_bitstring(element), do: "string"
   def get_type(element) when is_number(element), do: "number" 
+  def get_type(element) do
+    raise ArgumentError, message: "Unknown type" 
+  end
 
 end

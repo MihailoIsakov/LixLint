@@ -9,4 +9,4 @@ File.close file
 Typer.print str
 
 # Type stack doc
-TypeStack.print str
+#TypeStack.print str
